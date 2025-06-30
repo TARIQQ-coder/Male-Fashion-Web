@@ -1,10 +1,12 @@
-// components/Navbar.jsx
-import React, { useState } from 'react'
-import { Menu, Search, Heart, ShoppingBag } from 'lucide-react'
-import MobileMenu from './MobileMenu'
+import React, { useState } from 'react';
+import { Menu, Search, Heart, ShoppingBag } from 'lucide-react';
+import MobileMenu from './MobileMenu';
 
 const Navbar = () => {
-  const [isMobileOpen, setIsMobileOpen] = useState(false)
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('Home');
+
+  const navLinks = ['Home', 'Shop', 'Pages', 'Blog', 'Contacts'];
 
   return (
     <nav className="w-full px-6 py-4 flex items-center justify-between bg-white shadow-sm relative">
@@ -16,16 +18,22 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Nav Links */}
-      <ul className="hidden md:flex gap-8 text-sm font-medium text-black">
-        {['Home', 'Shop', 'Pages', 'Blog', 'Contacts'].map((item, index) => (
-          // group allows children to react to the parent’s hover.
-          // group-hover applies a hover effect from the parent to a child.
-          <li key={index} className="relative group cursor-pointer">
-            <span className="transition duration-300 group-hover:text-orange-500">
+      <ul className="hidden md:flex gap-8 font-medium text-black">
+        {navLinks.map((item, index) => (
+          <li
+            key={index}
+            className="relative group cursor-pointer"
+            onClick={() => setActiveLink(item)}
+          >
+            <span className={`transition duration-300 ${activeLink === item ? 'text-black' : ''}`}>
               {item}
             </span>
-            {/* The underline starts invisible and animates into view when hovered. */}
-            <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+            {/* Hover underline & active underline */}
+            <span
+              className={`absolute left-0 -bottom-1 h-0.5 bg-orange-500 transition-all duration-300
+                ${activeLink === item ? 'w-full' : 'w-0 group-hover:w-full'}
+              `}
+            ></span>
           </li>
         ))}
       </ul>
@@ -45,10 +53,10 @@ const Navbar = () => {
         <Menu className="w-6 h-6 cursor-pointer" onClick={() => setIsMobileOpen(true)} />
       </div>
 
-      {/* Mobile Slide-In Menu Component */}
+      {/* Mobile Slide-In Menu */}
       <MobileMenu open={isMobileOpen} onClose={() => setIsMobileOpen(false)} />
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
