@@ -4,15 +4,18 @@ import HomePage from './components/HomePage'
 import Footer from './components/Footer'
 import Shop from './components/Shop'
 import Blog from './components/Blog'
+import Contact from './components/Contact'
 
 function App() {
   return (
     <div>
-       {/* <Navbar />  */}
+       {/* <Navbar /> 
       {/* <HomePage />  */}
+      {/* <Contact /> */}
      {/* <Footer />  */}
      {/* <Shop /> */}
-     <Blog /> 
+     {/* <Blog />  */}
+     
     </div>
   )
 }
