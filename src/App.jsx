@@ -7,6 +7,7 @@ import Blog from './components/Blog'
 import Contact from './components/Contact'
 import About from './components/About'
 import Cart from './components/Cart'
+import Checkout from './components/Checkout'
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       {/* <HomePage />  */}
       {/* <Contact /> */}
       {/* <About /> */}
-      <Cart/>
+      {/* <Cart/> */}
+      <Checkout />
      {/* <Footer /> */}
      {/* <Shop /> */}
      {/* <Blog />  */}
