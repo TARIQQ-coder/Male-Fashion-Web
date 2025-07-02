@@ -13,8 +13,8 @@ import { BiLogoApple,BiLogoDjango,BiLogoFlutter } from "react-icons/bi";
 
 function About() {
   return (
-    <div>
-      <div className='bg-[#f3f2ee] py-8 pl-24 my-4'>
+    <div className='mb-20'>
+      <div className='bg-[#f3f2ee] py-8 pl-24'>
             <h2 className='text-2xl font-bold my-2'>About Us</h2>
       
             <div className='flex items-center gap-1'>

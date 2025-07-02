@@ -9,7 +9,7 @@ const Navbar = () => {
   const navLinks = ['Home', 'Shop', 'Pages', 'Blog', 'Contacts'];
 
   return (
-    <nav className="w-full px-6 py-4 flex items-center justify-between bg-white shadow-sm relative">
+    <nav className="w-full px-6 py-4 flex items-center justify-between bg-white relative">
       {/* Logo */}
       <div className="flex items-center">
         <span className="text-4xl font-bold">M</span>

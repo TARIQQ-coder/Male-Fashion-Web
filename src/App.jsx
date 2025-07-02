@@ -6,15 +6,17 @@ import Shop from './components/Shop'
 import Blog from './components/Blog'
 import Contact from './components/Contact'
 import About from './components/About'
+import Cart from './components/Cart'
 
 function App() {
   return (
     <div>
-       {/* <Navbar /> 
+       {/* <Navbar /> */}
       {/* <HomePage />  */}
       {/* <Contact /> */}
-      <About />
-     {/* <Footer />  */}
+      {/* <About /> */}
+      <Cart/>
+     {/* <Footer /> */}
      {/* <Shop /> */}
      {/* <Blog />  */}
      
