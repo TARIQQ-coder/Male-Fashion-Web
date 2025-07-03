@@ -18,8 +18,12 @@ import SalesHat from '../assets/SalesHat.png'
 import SalesBoot from '../assets/SalesBoot.png'
 import SalesScarf from '../assets/SalesScarf.png'
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { useCart } from '../Context/CartContext';
 
 const Shop = () => {
+
+  const { addToCart } = useCart();
+
   const [openCategories, setOpenCategories] = useState(true);
   const [openBranding, setOpenBranding] = useState(true);
   const [openPrices, setOpenPrices] = useState(true);
@@ -357,14 +361,14 @@ const Shop = () => {
                       {/* Animated Name/Cart Text */}
                       <div className="mt-4 h-6 overflow-hidden relative">
                         <p
-                          className={`absolute transition-all duration-300 font-medium left-0 right-0 ${
-                          isHovered
-                            ? 'translate-y-0 opacity-100 text-red-500'
-                            : '-translate-y-6 opacity-0 text-black'
-                        }`}
-                      >
-                        Add to Cart
-                      </p>
+  onClick={() => addToCart(product)}
+  className={`absolute transition-all duration-300 font-medium left-0 right-0 cursor-pointer ${
+    isHovered ? 'translate-y-0 opacity-100 text-red-500 underline' : '-translate-y-6 opacity-0 text-black'
+  }`}
+>
+  Add to Cart
+</p>
+
                       <p
                         className={`absolute transition-all duration-300 font-medium left-0 right-0  ${
                           isHovered

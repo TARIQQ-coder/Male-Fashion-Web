@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import { Menu, Search, ShoppingCart, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import MobileMenu from './MobileMenu';
+import { useCart } from '../context/CartContext';
 
 const Navbar = () => {
+
+   const { cartItems } = useCart();
+
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
 
@@ -11,12 +15,12 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'Shop', path: '/shop' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contacts' },
+    { name: 'Contacts', path: '/contacts' },
   ];
 
   const pageLinks = [
-    { name: 'About', path: '/about-us' },
-    { name: 'Cart', path: '/shopping-cart' },
+    { name: 'About Us', path: '/about-us' },
+    { name: 'Shopping-Cart', path: '/shopping-cart' },
     { name: 'Checkout', path: '/checkout' },
   ];
 
@@ -77,11 +81,17 @@ const Navbar = () => {
 
       {/* Desktop Icons */}
       <div className="hidden md:flex items-center gap-6">
-        <Search className="w-5 h-5 cursor-pointer" />
-        <div className="relative flex items-center cursor-pointer">
-          <ShoppingCart className="w-5 h-5" />
-        </div>
-      </div>
+  <Search className="w-5 h-5 cursor-pointer" />
+  
+  <Link to="/shopping-cart" className="relative flex items-center cursor-pointer">
+    <ShoppingCart className="w-5 h-5" />
+    {cartItems.length > 0 && (
+      <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+        {cartItems.length}
+      </span>
+    )}
+  </Link>
+</div>
 
       {/* Mobile Hamburger Menu */}
       <div className="md:hidden">

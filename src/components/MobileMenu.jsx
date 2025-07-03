@@ -7,15 +7,15 @@ const MobileMenu = ({ open, onClose }) => {
   const [showPagesDropdown, setShowPagesDropdown] = useState(false);
 
   const navLinks = [
-    { name: 'HomePage', path: '/' },
+    { name: 'Home', path: '/' },
     { name: 'Shop', path: '/shop' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contacts' },
+    { name: 'Contacts', path: '/contacts' },
   ];
 
   const pageLinks = [
-    { name: 'About', path: '/about-us' },
-    { name: 'Cart', path: '/shopping-cart' },
+    { name: 'About Us', path: '/about-us' },
+    { name: 'Shopping-Cart', path: '/shopping-cart' },
     { name: 'Checkout', path: '/checkout' },
   ];
 
