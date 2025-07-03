@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Menu, Search, ShoppingCart, ChevronDown } from 'lucide-react';
+import { Menu, ShoppingCart, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import MobileMenu from './MobileMenu';
 import { useCart } from '../context/CartContext';
 
 const Navbar = () => {
-
-   const { cartItems } = useCart();
+  const { cartItems } = useCart();
 
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
@@ -26,12 +25,12 @@ const Navbar = () => {
 
   return (
     <nav className="w-full px-6 py-4 flex items-center justify-between bg-white relative">
-      {/* Logo */}
-      <div className="flex items-center">
+      {/* Logo as a Link to Homepage */}
+      <Link to="/" className="flex items-center" onClick={() => setActiveLink('Home')}>
         <span className="text-4xl font-bold">M</span>
         <span className="text-2xl font-semibold">ale fashion</span>
         <span className="w-2 h-2 bg-red-500 inline-block ml-1"></span>
-      </div>
+      </Link>
 
       {/* Desktop Nav Links */}
       <ul className="hidden md:flex gap-8 font-medium text-black relative">
@@ -79,19 +78,17 @@ const Navbar = () => {
         </li>
       </ul>
 
-      {/* Desktop Icons */}
+      {/* Desktop Icons (Search removed) */}
       <div className="hidden md:flex items-center gap-6">
-  <Search className="w-5 h-5 cursor-pointer" />
-  
-  <Link to="/shopping-cart" className="relative flex items-center cursor-pointer">
-    <ShoppingCart className="w-5 h-5" />
-    {cartItems.length > 0 && (
-      <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-        {cartItems.length}
-      </span>
-    )}
-  </Link>
-</div>
+        <Link to="/shopping-cart" className="relative flex items-center cursor-pointer">
+          <ShoppingCart className="w-5 h-5" />
+          {cartItems.length > 0 && (
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+              {cartItems.length}
+            </span>
+          )}
+        </Link>
+      </div>
 
       {/* Mobile Hamburger Menu */}
       <div className="md:hidden">
