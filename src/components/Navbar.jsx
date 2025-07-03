@@ -1,12 +1,24 @@
 import React, { useState } from 'react';
-import { Menu, Search, Heart, ShoppingBag } from 'lucide-react';
+import { Menu, Search, ShoppingCart, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import MobileMenu from './MobileMenu';
 
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
 
-  const navLinks = ['Home', 'Shop', 'Pages', 'Blog', 'Contacts'];
+  const mainLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'Shop', path: '/shop' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Contact', path: '/contacts' },
+  ];
+
+  const pageLinks = [
+    { name: 'About', path: '/about-us' },
+    { name: 'Cart', path: '/shopping-cart' },
+    { name: 'Checkout', path: '/checkout' },
+  ];
 
   return (
     <nav className="w-full px-6 py-4 flex items-center justify-between bg-white relative">
@@ -18,33 +30,56 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Nav Links */}
-      <ul className="hidden md:flex gap-8 font-medium text-black">
-        {navLinks.map((item, index) => (
-          <li
-            key={index}
-            className="relative group cursor-pointer"
-            onClick={() => setActiveLink(item)}
-          >
-            <span className={`transition duration-300 ${activeLink === item ? 'text-black' : ''}`}>
-              {item}
-            </span>
-            {/* Hover underline & active underline */}
+      <ul className="hidden md:flex gap-8 font-medium text-black relative">
+        {mainLinks.map((item, index) => (
+          <li key={index} className="relative group cursor-pointer">
+            <Link
+              to={item.path}
+              onClick={() => setActiveLink(item.name)}
+              className={`transition duration-300 ${
+                activeLink === item.name ? 'text-black' : ''
+              }`}
+            >
+              {item.name}
+            </Link>
             <span
-              className={`absolute left-0 -bottom-1 h-0.5 bg-orange-500 transition-all duration-300
-                ${activeLink === item ? 'w-full' : 'w-0 group-hover:w-full'}
-              `}
+              className={`absolute left-0 -bottom-1 h-0.5 bg-orange-500 transition-all duration-300 ${
+                activeLink === item.name ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}
             ></span>
           </li>
         ))}
+
+        {/* Pages Dropdown */}
+        <li className="relative group cursor-pointer">
+          <div className="flex items-center gap-1">
+            <span className="transition duration-300">Pages</span>
+            <ChevronDown className="w-4 h-4" />
+          </div>
+
+          <ul className="absolute left-0 top-full mt-2 w-44 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-300 z-10">
+            {pageLinks.map((item, index) => (
+              <li key={index}>
+                <Link
+                  to={item.path}
+                  onClick={() => setActiveLink(item.name)}
+                  className={`block px-4 py-2 whitespace-nowrap transition duration-200 ${
+                    activeLink === item.name ? 'text-black bg-gray-100' : 'hover:bg-gray-100'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </li>
       </ul>
 
       {/* Desktop Icons */}
       <div className="hidden md:flex items-center gap-6">
         <Search className="w-5 h-5 cursor-pointer" />
-        <Heart className="w-5 h-5 cursor-pointer" />
-        <div className="flex items-center gap-1 cursor-pointer">
-          <ShoppingBag className="w-5 h-5" />
-          <span className="text-sm font-medium">$0.00</span>
+        <div className="relative flex items-center cursor-pointer">
+          <ShoppingCart className="w-5 h-5" />
         </div>
       </div>
 

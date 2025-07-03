@@ -31,6 +31,7 @@ import OutfitOnChair from '../assets/OutfitOnChair.jpg'
 import CoffeePic from '../assets/CoffeePic.jpg'
 import RoundPic from '../assets/RoundPic.jpg'
 import LakePic from '../assets/LakePic.jpg'
+import {Link} from 'react-router-dom'
 
 
 
@@ -106,12 +107,15 @@ const HomePage = () => {
 
             <p className='text-[#2b3c39] mb-4'>A specialist label creating luxury essentials.Ethically crafted with an unwavering commitment to exceptional quality</p>
 
-            <div className='w-fit bg-black text-[#efffff] px-8 py-3 flex justify-center items-center gap-2 cursor-pointer'>
-            <button className='text-lg'>
-              Shop Now 
-            </button>
-            <FaArrowRightLong />
-            </div>
+
+            <Link to="/shop">
+              <div className='w-fit bg-black text-[#efffff] px-8 py-3 flex justify-center items-center gap-2 cursor-pointer'>
+              <button className='text-lg'>
+                Shop Now 
+              </button>
+              <FaArrowRightLong />
+              </div>
+            </Link>
           </div>
 
           <div className='flex justify-center items-center gap-4 hover:cursor-pointer'>

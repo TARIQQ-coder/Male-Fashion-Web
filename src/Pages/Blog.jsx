@@ -12,7 +12,7 @@ import FashionShop from '../assets/FashionShop.jpg'
 
 function Blog() {
   return (
-    <div>
+    <div className=' mb-40'>
 
       <div style={{backgroundImage: `url(${BlogBg})`}} className='w-full h-[350px] bg-cover'>
         <div className='flex justify-center items-center h-full'>
@@ -69,7 +69,7 @@ function Blog() {
       
       
       
-                        <div className='max-w-[360px] relative group mx-auto transition-shadow duration-300 hover:shadow-xl '>
+                        <div className='max-w-[360px] relative group mx-auto mb-38 md:mb-0 transition-shadow duration-300 hover:shadow-xl '>
                           <div className='w-fit mx-auto'>
                             <img src={LakePic} alt="CoffeePic" className='w-[360px] h-[275px] object-cover'/>
                           </div>
@@ -137,7 +137,7 @@ function Blog() {
       
       
       
-                        <div className='max-w-[360px] relative group mx-auto transition-shadow duration-300 hover:shadow-xl'>
+                        <div className='max-w-[360px] relative group mx-auto mb-38 md:mb-0 transition-shadow duration-300 hover:shadow-xl'>
                           <div className='w-fit mx-auto'>
                             <img src={PeopleOnSidewalk} alt="CoffeePic" className='w-[360px] h-[275px] object-cover'/>
                           </div>
