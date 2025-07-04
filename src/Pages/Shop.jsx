@@ -15,7 +15,7 @@ import SalesHat from '../assets/SalesHat.png';
 import SalesBoot from '../assets/SalesBoot.png';
 import SalesScarf from '../assets/SalesScarf.png';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../Context/CartContext';
 import {Link} from 'react-router-dom';
 
 const Shop = () => {

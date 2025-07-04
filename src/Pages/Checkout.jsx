@@ -3,7 +3,7 @@ import React from 'react';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import { LiaTagSolid } from 'react-icons/lia';
 import { Link } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../Context/CartContext';
 
 function Checkout() {
   const { cartItems, setCartItems } = useCart();

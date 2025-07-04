@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Menu, ShoppingCart, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import MobileMenu from './MobileMenu';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../Context/CartContext';
 
 const Navbar = () => {
   const { cartItems } = useCart();

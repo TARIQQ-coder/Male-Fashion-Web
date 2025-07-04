@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, ShoppingCart, X, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../Context/CartContext';
 
 const MobileMenu = ({ open, onClose }) => {
   const { cartItems } = useCart();

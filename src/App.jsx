@@ -1,7 +1,7 @@
 // src/App.jsx
 import React from 'react';
 import { Router, Routes, Route } from 'react-router-dom';
-import { CartProvider } from './context/CartContext';
+import { CartProvider } from './Context/CartContext';
 import Navbar from './components/Navbar';
 import HomePage from './Pages/HomePage';
 import Footer from './components/Footer';

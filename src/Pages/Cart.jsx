@@ -2,7 +2,7 @@
 import React from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../Context/CartContext';
 import {Link} from 'react-router-dom';
 
 const Cart = () => {
