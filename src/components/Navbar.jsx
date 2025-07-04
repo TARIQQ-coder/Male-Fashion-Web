@@ -1,3 +1,4 @@
+// src/components/Navbar.jsx
 import React, { useState } from 'react';
 import { Menu, ShoppingCart, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -6,6 +7,7 @@ import { useCart } from '../context/CartContext';
 
 const Navbar = () => {
   const { cartItems } = useCart();
+  console.log('Navbar cartItems:', cartItems, 'Length:', cartItems.length); // Enhanced debug log
 
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
@@ -25,14 +27,12 @@ const Navbar = () => {
 
   return (
     <nav className="w-full px-6 py-4 flex items-center justify-between bg-white relative">
-      {/* Logo as a Link to Homepage */}
       <Link to="/" className="flex items-center" onClick={() => setActiveLink('Home')}>
         <span className="text-4xl font-bold">M</span>
         <span className="text-2xl font-semibold">ale fashion</span>
         <span className="w-2 h-2 bg-red-500 inline-block ml-1"></span>
       </Link>
 
-      {/* Desktop Nav Links */}
       <ul className="hidden md:flex gap-8 font-medium text-black relative">
         {mainLinks.map((item, index) => (
           <li key={index} className="relative group cursor-pointer">
@@ -53,7 +53,6 @@ const Navbar = () => {
           </li>
         ))}
 
-        {/* Pages Dropdown */}
         <li className="relative group cursor-pointer">
           <div className="flex items-center gap-1">
             <span className="transition duration-300">Pages</span>
@@ -78,24 +77,19 @@ const Navbar = () => {
         </li>
       </ul>
 
-      {/* Desktop Icons (Search removed) */}
       <div className="hidden md:flex items-center gap-6">
         <Link to="/shopping-cart" className="relative flex items-center cursor-pointer">
           <ShoppingCart className="w-5 h-5" />
-          {cartItems.length > 0 && (
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-              {cartItems.length}
-            </span>
-          )}
+          <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full z-10">
+            {cartItems.length}
+          </span>
         </Link>
       </div>
 
-      {/* Mobile Hamburger Menu */}
       <div className="md:hidden">
         <Menu className="w-6 h-6 cursor-pointer" onClick={() => setIsMobileOpen(true)} />
       </div>
 
-      {/* Mobile Slide-In Menu */}
       <MobileMenu open={isMobileOpen} onClose={() => setIsMobileOpen(false)} />
     </nav>
   );

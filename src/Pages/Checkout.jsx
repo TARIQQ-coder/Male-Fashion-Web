@@ -1,21 +1,25 @@
 import React from 'react'
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { LiaTagSolid } from "react-icons/lia";
+import { Link } from 'react-router-dom';
 
 function Checkout() {
   return (
     <div>
-             <div className='bg-[#f3f2ee] py-8 pl-24 my-4'>
-                  <h2 className='text-2xl font-semibold my-2'>Check Out</h2>
-            
-                  <div className='flex items-center gap-1'>
-                    <span>Home</span>
-                    <MdOutlineKeyboardArrowRight className='mt-1' />
-                    <span>Shop</span>
-                    <MdOutlineKeyboardArrowRight className='mt-1' />
-                    <span className='text-[#b7b9c5]'>Check Out</span>
-                  </div>
-                </div>
+             <div className="bg-[#f3f2ee] py-8 pl-24 my-4">
+        <h2 className="text-2xl font-semibold my-2">Check Out</h2>
+        <div className="flex items-center gap-1">
+          <Link to="/" className="hover:text-blue-500 hover:underline">
+            Home
+          </Link>
+          <MdOutlineKeyboardArrowRight className="mt-1" />
+          <Link to="/shop" className="hover:text-blue-500 hover:underline">
+            Shop
+          </Link>
+          <MdOutlineKeyboardArrowRight className="mt-1" />
+          <span className="text-[#b7b9c5]">Check Out</span>
+        </div>
+      </div>
 
                 <div>
 
