@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div>
+    <div className='mt-18'>
       <div className="w-full h-[450px]">
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31764.24355789902!2d-0.18350080000000002!3d5.636096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sgh!4v1751297113778!5m2!1sen!2sgh" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className='w-full h-full border-0'></iframe>
       </div>

@@ -12,7 +12,7 @@ import FashionShop from '../assets/FashionShop.jpg'
 
 function Blog() {
   return (
-    <div className=' mb-40'>
+    <div className=' mb-40 mt-18'>
 
       <div style={{backgroundImage: `url(${BlogBg})`}} className='w-full h-[350px] bg-cover'>
         <div className='flex justify-center items-center h-full'>

@@ -14,7 +14,7 @@ const Cart = () => {
     .toFixed(2);
 
   return (
-    <div className="mb-20">
+    <div className="mb-20 mt-18">
       <div className="bg-[#f3f2ee] py-8 pl-24 my-4">
         <h2 className="text-2xl font-semibold my-2">Shopping Cart</h2>
         <div className="flex items-center gap-1">

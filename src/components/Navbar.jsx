@@ -26,7 +26,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full px-6 py-4 flex items-center justify-between bg-white relative">
+    <nav className="fixed top-0 left-0 right-0 px-6 py-4 flex items-center justify-between bg-white z-50">
       <Link to="/" className="flex items-center" onClick={() => setActiveLink('Home')}>
         <span className="text-4xl font-bold">M</span>
         <span className="text-2xl font-semibold">ale fashion</span>

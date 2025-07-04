@@ -87,7 +87,7 @@ const Shop = () => {
 
   return (
     <div>
-      <div className="bg-[#f3f2ee] py-8 pl-24 my-4">
+      <div className="bg-[#f3f2ee] py-8 pl-24 my-4 mt-18">
         <h2 className="text-2xl font-bold my-2">Shop</h2>
         <div className="flex items-center gap-1">
           <Link to="/" className="hover:text-blue-500 hover:underline">
