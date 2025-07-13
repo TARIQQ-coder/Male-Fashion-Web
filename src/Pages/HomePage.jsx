@@ -32,6 +32,7 @@ import CoffeePic from '../assets/CoffeePic.jpg'
 import RoundPic from '../assets/RoundPic.jpg'
 import LakePic from '../assets/LakePic.jpg'
 import {Link} from 'react-router-dom'
+import Carousell from '../components/Carousell';
 
 
 
@@ -97,7 +98,7 @@ const HomePage = () => {
   return (
     <div className='mb-50'>
 
-      <div className="h-screen w-full bg-cover bg-[10%_35%]" style={{backgroundImage: `url(${BackgroundImage1})`}}>
+      {/* <div className="h-screen w-full bg-cover bg-[10%_35%]" style={{backgroundImage: `url(${BackgroundImage1})`}}>
 
         <div className='flex flex-col items-center justify-center h-full max-w-lg gap-16'>
           <div className='bg-gray-500/90 md:bg-white/50 p-8 rounded-md ml-10 md:ml-8'>
@@ -125,7 +126,11 @@ const HomePage = () => {
            <FaXTwitter className='w-6 h-6'/>
         </div>
         </div>
-      </div>
+      </div> */}
+
+      <section >
+        <Carousell />
+      </section>
 
 
             {/* first display of products */}
